@@ -1,0 +1,19 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "JS OOP project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "virtual-pet"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-mcr-codes": "^1.3.0",
+    "jest": "^24.1.0"
+  }
+}
