@@ -6,13 +6,20 @@ function Pet(name) {
   this.fitness = MAXIMUM_FITNESS;
 };
 
+//getter methods must come immmediately after constructor function
+Pet.prototype = {
+    get isAlive() {
+    	return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+  }
+};
+
 Pet.prototype.growUp = function () {
     this.age += 1;
     this.hunger += 5;
     this.fitness -= 3;
   
   };
-
+  
 const MAXIMUM_FITNESS = 10;
 
 Pet.prototype.walk = function () {
@@ -24,16 +31,14 @@ const MINIMUM_HUNGER_LEVEL = 0;
 Pet.prototype.feed = function () {
 
   if ((this.hunger - 3) >= MINIMUM_HUNGER_LEVEL) {
-
     this.hunger -= 3;
-
   } else {
     this.hunger = MINIMUM_HUNGER_LEVEL;
   }
 };
 
 Pet.prototype.checkUp = function () {
-
+	
 	const petFitnessLevel = 3;
 	const petHungerLevel = 5;
 
