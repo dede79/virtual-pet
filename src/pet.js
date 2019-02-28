@@ -1,30 +1,30 @@
 function Pet(name) {
-  // reminder for myself only: 'this' keyword means whatever instance is created, it belongs to the Pet constructor:
-  this.name = name;
-  this.age = 0;
-  this.hunger = 5;
-  this.fitness = MAXIMUM_FITNESS;
+	// reminder for myself only: 'this' keyword means whatever instance is created, it belongs to the Pet constructor:
+	this.name = name;
+	this.age = 0;
+	this.hunger = 5;
+	this.fitness = MAXIMUM_FITNESS;
+	this.children = [];
+
 };
 
 //getter methods must come immmediately after constructor function
 Pet.prototype = {
-    get isAlive() {
-    	return this.age < 30 && this.hunger < 10 && this.fitness > 0;
-  }
+		get isAlive() {
+			return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+	}
 };
 
 Pet.prototype.growUp = function () {
-	if (!this.isAlive) {
-		throw new Error('Your pet is no longer alive :(');	  
-	}
+		if (!this.isAlive) {
+			throw new Error('Your pet is no longer alive :(');	  
+		}
 
-    this.age += 1;
-    this.hunger += 5;
-	this.fitness -= 3;
+		this.age += 1;
+		this.hunger += 5;
+		this.fitness -= 3;
+	};
 	
-  
-  };
-  
 const MAXIMUM_FITNESS = 10;
 
 Pet.prototype.walk = function () {
@@ -32,7 +32,7 @@ Pet.prototype.walk = function () {
 		throw new Error('Your pet is no longer alive :(');	  
 	}
 
-    this.fitness += 4;
+		this.fitness += 4;
 }
 
 const MINIMUM_HUNGER_LEVEL = 0; 
@@ -43,11 +43,11 @@ if (!this.isAlive) {
 	throw new Error('Your pet is no longer alive :(');
 }
 
-  if ((this.hunger - 3) >= MINIMUM_HUNGER_LEVEL) {
-    this.hunger -= 3;
-  } else {
-    this.hunger = MINIMUM_HUNGER_LEVEL;
-  }
+	if ((this.hunger - 3) >= MINIMUM_HUNGER_LEVEL) {
+		this.hunger -= 3;
+	} else {
+		this.hunger = MINIMUM_HUNGER_LEVEL;
+	}
 };
 
 Pet.prototype.checkUp = function () {
@@ -80,5 +80,9 @@ Pet.prototype.checkUp = function () {
 	}
 
 };
+
+Pet.prototype.haveBaby = function (child) {
+	return  this.children.push(child);
+  }
 
 module.exports = Pet;

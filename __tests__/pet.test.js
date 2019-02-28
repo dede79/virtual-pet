@@ -130,3 +130,12 @@ describe('isAlive', () => {
   	expect(pet.growUp).toThrow('Your pet is no longer alive :(');
 	});
 });
+
+describe('haveBaby', () => {
+		it("Assert that the parent pet's children property is an array, where the first element is an instance of Pet with a name property of Billy", () => {
+			const parent = new Pet('Dave');
+			const newChild = new Pet('Billy');
+			parent.haveBaby(newChild)
+			expect(parent.children).toContain(newChild);
+		});
+});
