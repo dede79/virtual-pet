@@ -127,7 +127,7 @@ describe('isAlive', () => {
 
 	it('throws an error if the pet is not alive', () => {
 		pet.age = 30;
-  	expect(pet.growUp).toThrow('Your pet is no longer alive :(');
+  	expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
 	});
 });
 
