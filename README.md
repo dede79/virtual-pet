@@ -25,4 +25,4 @@ Andrea Hurren
 
 ## Acknowledgments
 
-Ersel Anker and Joe Stephens at [Manchester Codes] (https://www.manchestercodes.com)
+Ersel Anker and Joe Stephens at [Manchester Codes](https://www.manchestercodes.com)
